@@ -75,11 +75,11 @@ class Tree:
         if len(node.children) > 0:
             # START YOUR CODE #
             
-            for child in node.children: #"?":                                               # 對每個子節點:
-                tmp_path, tmp_value = self.dfs_find_maximum_path(child)#"?")       # 得到子節點的最大總和、最大總和路
-                if tmp_value > max_value: # "?":                                                     # 更新最大總和、最大總和路
-                    max_sub_path = tmp_path# "?"
-                    max_value = tmp_value# "?"
+            for child in "?":                                               # 對每個子節點:
+                tmp_path, tmp_value = self.dfs_find_maximum_path("?")       # 得到子節點的最大總和、最大總和路
+                if "?":                                                     # 更新最大總和、最大總和路
+                    max_sub_path = "?"
+                    max_value = "?"
                     
             # END YOUR CODE #
             return [node] + max_sub_path, max_value + node.value            # 做完以後會回傳新增現在節點的最大總和路徑與最大總和
