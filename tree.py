@@ -1,4 +1,4 @@
-import sys
+import pickle
 from generate_test_data import test_data
 
 class TreeNode:
@@ -75,7 +75,7 @@ class Tree:
         if len(node.children) > 0:
             # START YOUR CODE #
             
-            for child in "?":                                               # 對每個子節點:
+            for child in node.children:                                     # 對每個子節點:
                 tmp_path, tmp_value = self.dfs_find_maximum_path("?")       # 得到子節點的最大總和、最大總和路
                 if "?":                                                     # 更新最大總和、最大總和路
                     max_sub_path = "?"
@@ -90,21 +90,20 @@ class Tree:
 
     
 if __name__ == '__main__':
-    
-    test = test_data(10)
-    for t in test:    
-        root_value = t[0]
-        root_node = TreeNode(root_value)
-        tree = Tree(root_node)
-        for uv in t[1:]:
-            tree.add_node(uv[0], uv[1])
-        
-        print('\nTree shape:')
-        tree.print_tree(tree.root)
-        
-        print('\nMaximum path:')
-        maximum = tree.find_maximum_path()
-        tree.print_max_path()
-        print(f'\nMaxima: {maximum}')
+    with open('test_data.pkl', 'rb') as test_file:
+        test = pickle.load(test_file)
+        for t in test:    
+            root_value = t[0]
+            root_node = TreeNode(root_value)
+            tree = Tree(root_node)
+            for uv in t[1:]:
+                tree.add_node(uv[0], uv[1])
+            
+            print('\nTree shape:')
+            tree.print_tree(tree.root)
+            print('\nMaximum path:')
+            maximum = tree.find_maximum_path()
+            tree.print_max_path()
+            print(f'\nMaxima: {maximum}')
         
     
