@@ -1,4 +1,5 @@
 import random
+import pickle
 
 def generate_test_data(num_nodes):
     root_value = random.randint(1, 1000)
@@ -35,4 +36,6 @@ def test_data(num_test_cases):
         test_data.append(test_case)
     return test_data
 
-# print(test_data(5))
+if __name__ == '__main__':
+    with open('test_data.pkl', 'wb') as file:
+        pickle.dump(test_data(5), file)
