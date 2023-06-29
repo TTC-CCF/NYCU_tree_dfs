@@ -1,5 +1,4 @@
 import pickle
-from generate_test_data import test_data
 
 class TreeNode:
     def __init__(self, value):
@@ -102,8 +101,12 @@ if __name__ == '__main__':
             print('\nTree shape:')
             tree.print_tree(tree.root)
             print('\nMaximum path:')
-            maximum = tree.find_maximum_path()
-            tree.print_max_path()
-            print(f'\nMaxima: {maximum}')
+            try:
+                maximum = tree.find_maximum_path()
+                assert maximum != float('-inf')      
+                tree.print_max_path()
+                print(f'\nMaxima: {maximum}')
+            except:
+                print('你寫錯了!')
         
     
