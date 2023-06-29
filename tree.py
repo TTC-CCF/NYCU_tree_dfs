@@ -74,7 +74,7 @@ class Tree:
         if len(node.children) > 0:
             # START YOUR CODE #
             
-            for child in node.children:                                     # 對每個子節點:
+            for child in "?":                                     # 對每個子節點:
                 tmp_path, tmp_value = self.dfs_find_maximum_path("?")       # 得到子節點的最大總和、最大總和路
                 if "?":                                                     # 更新最大總和、最大總和路
                     max_sub_path = "?"
